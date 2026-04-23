@@ -12,15 +12,20 @@
 <body>
   <div class="page-aura" aria-hidden="true"></div>
 
+  <button id="lang-toggle" class="lang-toggle" type="button" aria-label="切换语言">
+    <span class="lang-option" data-lang-code="zh">CN</span>
+    <span class="lang-option" data-lang-code="en">EN</span>
+  </button>
+
   <header class="site-nav">
-    <nav aria-label="页面导航">
-      <a href="#about" class="nav-link is-active">关于</a>
-      <a href="#skills" class="nav-link">技能</a>
-      <a href="#projects" class="nav-link">项目</a>
-      <a href="#internships" class="nav-link">实习</a>
-      <a href="#campus" class="nav-link">校园</a>
-      <a href="#certificates" class="nav-link">证书</a>
-      <a href="#contact" class="nav-link">联系方式</a>
+    <nav id="site-nav" aria-label="页面导航">
+      <a href="#about" class="nav-link is-active" data-nav="about">关于</a>
+      <a href="#skills" class="nav-link" data-nav="skills">技能</a>
+      <a href="#projects" class="nav-link" data-nav="projects">项目</a>
+      <a href="#internships" class="nav-link" data-nav="internships">实习</a>
+      <a href="#campus" class="nav-link" data-nav="campus">校园</a>
+      <a href="#certificates" class="nav-link" data-nav="certificates">证书</a>
+      <a href="#contact" class="nav-link" data-nav="contact">联系方式</a>
     </nav>
   </header>
 
@@ -29,82 +34,82 @@
       <div class="hero-shell">
         <article class="hero-layer hero-layer--base">
           <div class="hero-center hero-tilt">
-            <h1>Hello, I&apos;m <span>Kyrie</span></h1>
-            <p class="hero-roleline">AI大模型应用开发/23岁/集美大学/厦门</p>
+            <h1 id="hero-base-title">Hello, I&apos;m <span>Kyrie</span></h1>
+            <p id="hero-base-roleline" class="hero-roleline">AI大模型应用开发/23岁/集美大学/厦门</p>
           </div>
         </article>
 
         <article class="hero-layer hero-layer--reveal" aria-hidden="true">
           <div class="hero-center hero-tilt">
-            <h1>你好，我是<span>林晓军</span></h1>
-            <p class="hero-roleline">AI大模型应用开发/23岁/集美大学/厦门</p>
+            <h1 id="hero-reveal-title">你好，我是<span>林晓军</span></h1>
+            <p id="hero-reveal-roleline" class="hero-roleline">AI大模型应用开发/23岁/集美大学/厦门</p>
           </div>
         </article>
       </div>
 
       <div class="hero-cursor" aria-hidden="true"></div>
-      <a class="scroll-prompt" href="#skills">向下浏览履历模块</a>
+      <a id="scroll-prompt" class="scroll-prompt" href="#skills">向下浏览履历模块</a>
     </section>
 
     <section class="content-section about-overview section-observe">
       <div class="section-heading section-heading--compact">
-        <p class="section-index">01B / About</p>
-        <h2>关于</h2>
-        <p>这部分写的是我的基本情况、教育经历和目前的求职方向。</p>
+        <p class="section-index" data-section-index="about">01B / About</p>
+        <h2 data-section-title="about">关于</h2>
+        <p data-section-copy="about">这部分写的是我的基本情况、教育经历和目前的求职方向。</p>
       </div>
       <div class="card-grid" data-section="about"></div>
     </section>
 
     <section id="skills" class="content-section section-observe">
       <div class="section-heading">
-        <p class="section-index">02 / Skills</p>
-        <h2>技能</h2>
-        <p>我的核心能力主要集中在 Agent 开发、RAG 系统、Java 后端以及数据库与前端工程实践。</p>
+        <p class="section-index" data-section-index="skills">02 / Skills</p>
+        <h2 data-section-title="skills">技能</h2>
+        <p data-section-copy="skills">我的核心能力主要集中在 Agent 开发、RAG 系统、Java 后端以及数据库与前端工程实践。</p>
       </div>
       <div class="card-grid" data-section="skills"></div>
     </section>
 
     <section id="projects" class="content-section section-observe">
       <div class="section-heading">
-        <p class="section-index">03 / Projects</p>
-        <h2>项目</h2>
-        <p>这里是我做过的几个代表项目，既有企业 AI 应用，也有后端和校园系统开发。</p>
+        <p class="section-index" data-section-index="projects">03 / Projects</p>
+        <h2 data-section-title="projects">项目</h2>
+        <p data-section-copy="projects">这里是我做过的几个代表项目，既有企业 AI 应用，也有后端和校园系统开发。</p>
       </div>
       <div class="card-grid" data-section="projects"></div>
     </section>
 
     <section id="internships" class="content-section section-observe">
       <div class="section-heading">
-        <p class="section-index">04 / Internships</p>
-        <h2>实习</h2>
-        <p>两段实习让我积累了业务系统开发、AI 应用落地和企业场景接入方面的实际经验。</p>
+        <p class="section-index" data-section-index="internships">04 / Internships</p>
+        <h2 data-section-title="internships">实习</h2>
+        <p data-section-copy="internships">两段实习让我积累了业务系统开发、AI 应用落地和企业场景接入方面的实际经验。</p>
       </div>
       <div class="card-grid" data-section="internships"></div>
     </section>
 
     <section id="campus" class="content-section section-observe">
       <div class="section-heading">
-        <p class="section-index">05 / Campus</p>
-        <h2>校园</h2>
-        <p>校园经历更多体现了我的组织推进、事务协调和跨角色沟通能力。</p>
+        <p class="section-index" data-section-index="campus">05 / Campus</p>
+        <h2 data-section-title="campus">校园</h2>
+        <p data-section-copy="campus">校园经历更多体现了我的组织推进、事务协调和跨角色沟通能力。</p>
       </div>
       <div class="card-grid" data-section="campus"></div>
     </section>
 
     <section id="certificates" class="content-section section-observe">
       <div class="section-heading">
-        <p class="section-index">06 / Certificates</p>
-        <h2>证书</h2>
-        <p>这里补充了我的英语等级、发明专利和奖学金情况。</p>
+        <p class="section-index" data-section-index="certificates">06 / Certificates</p>
+        <h2 data-section-title="certificates">证书</h2>
+        <p data-section-copy="certificates">这里补充了我的英语等级、发明专利和奖学金情况。</p>
       </div>
       <div class="card-grid" data-section="certificates"></div>
     </section>
 
     <section id="contact" class="content-section section-observe">
       <div class="section-heading">
-        <p class="section-index">07 / Contact</p>
-        <h2>联系方式</h2>
-        <p>如果你想进一步了解我，可以直接通过邮箱、微信或者 GitHub 联系我。</p>
+        <p class="section-index" data-section-index="contact">07 / Contact</p>
+        <h2 data-section-title="contact">联系方式</h2>
+        <p data-section-copy="contact">如果你想进一步了解我，可以直接通过邮箱、微信或者 GitHub 联系我。</p>
       </div>
       <div class="card-grid" data-section="contact"></div>
     </section>
