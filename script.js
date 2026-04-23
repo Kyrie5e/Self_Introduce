@@ -21,7 +21,7 @@ const resumeData = {
       details: [
         "主修课程包括计算机网络、计算机组成原理、操作系统、数据结构、Java、数据库、C 语言等。",
         "在校期间持续参与项目开发、校园管理工作和工程实践，理论与实践结合较紧密。",
-        "当前页面中的技术与项目内容，均已按你的真实简历进行替换。"
+        "预计于 2026 年 6 月毕业，课程体系覆盖软件开发、系统基础与数据库等核心方向。"
       ]
     },
     {
@@ -33,7 +33,7 @@ const resumeData = {
       details: [
         "有 Java 后端、RAG 系统、Agent 开发和企业业务集成的真实项目经历。",
         "既能处理接口、数据库、中间件，也能完成前端界面和系统联调。",
-        "适合投递 AI 应用开发、Agent 开发、Java 后端结合大模型应用等岗位。"
+        "目标岗位聚焦 AI 应用开发、Agent 开发以及 Java 后端结合大模型应用方向。"
       ]
     }
   ],
@@ -256,36 +256,36 @@ const resumeData = {
       kicker: "Contact",
       title: "邮箱联系",
       meta: "1747475576@qq.com",
-      note: "适合岗位沟通、材料发送与正式联系",
-      description: "这是你简历中的正式邮箱，可作为投递岗位、接收面试邀请和补充作品材料的主要联系方式。",
+      note: "用于岗位沟通、材料发送与正式联系",
+      description: "邮箱为 1747475576@qq.com，可用于发送简历、补充项目资料和接收面试通知。",
       details: [
-        "建议在外部投递时保持邮箱签名简洁专业。",
-        "可在邮件中同步附上 GitHub 仓库或作品展示链接。",
-        "适合用于投递岗位、发送补充材料和接收正式通知。"
+        "可用于岗位投递、招聘沟通和正式材料往来。",
+        "适合发送项目说明、作品链接和补充说明材料。",
+        "作为主要联络方式，便于统一接收书面通知。"
       ]
     },
     {
       kicker: "Contact",
       title: "电话联系",
       meta: "13459162653",
-      note: "适合快速确认面试安排与沟通时间",
-      description: "电话适合用于高优先级沟通，例如面试确认、时间协调和紧急联系。",
+      note: "用于面试确认、时间协调与即时沟通",
+      description: "电话为 13459162653，适合在面试安排、沟通确认和紧急联系场景中使用。",
       details: [
-        "建议保持工作时段内电话与短信通畅。",
-        "如果对外公开页面有隐私顾虑，也可以后续改成半隐藏展示。",
-        "当前号码已根据你的简历信息同步填入页面。"
+        "可用于快速确认面试时间、线上会议和沟通安排。",
+        "在需要即时反馈的场景中，电话联系效率更高。",
+        "可以和邮箱配合使用，形成完整的沟通渠道。"
       ]
     },
     {
       kicker: "Contact",
       title: "GitHub",
       meta: "github.com/Kyrie5e/Self_Introduce",
-      note: "可补充展示代码、页面成品和持续更新内容",
-      description: "你的个人介绍页项目已经发布到 GitHub，可作为展示页面和代码能力的补充入口。",
+      note: "展示页面项目、代码实现与更新记录",
+      description: "GitHub 仓库中可以查看当前个人介绍页项目，并进一步了解代码组织、交互实现和更新记录。",
       details: [
         "仓库地址为 https://github.com/Kyrie5e/Self_Introduce 。",
-        "后续可继续补充 README、项目截图和 GitHub Pages 在线访问链接。",
-        "适合作为简历外链或面试补充材料的一部分。"
+        "可直接查看源码、提交记录和页面持续更新内容。",
+        "适合作为简历外链和面试过程中补充展示项目实现细节的入口。"
       ]
     }
   ]
@@ -415,6 +415,32 @@ function setupCards() {
   modalCloseButton.addEventListener("click", closeModal);
 }
 
+function setupCardTilt() {
+  const cards = document.querySelectorAll(".resume-card");
+
+  cards.forEach((card) => {
+    card.addEventListener("pointermove", (event) => {
+      const rect = card.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+      const xPercent = x / rect.width;
+      const yPercent = y / rect.height;
+      const tiltX = (0.5 - yPercent) * 16;
+      const tiltY = (xPercent - 0.5) * 22;
+
+      card.style.setProperty("--card-tilt-x", `${tiltX}deg`);
+      card.style.setProperty("--card-tilt-y", `${tiltY}deg`);
+      card.style.setProperty("--card-lift", "-8px");
+    });
+
+    card.addEventListener("pointerleave", () => {
+      card.style.setProperty("--card-tilt-x", "0deg");
+      card.style.setProperty("--card-tilt-y", "0deg");
+      card.style.setProperty("--card-lift", "0px");
+    });
+  });
+}
+
 function setActiveNav(id) {
   navLinks.forEach((link) => {
     link.classList.toggle("is-active", link.getAttribute("href") === `#${id}`);
@@ -498,6 +524,7 @@ function handleMotionChange() {
 
 renderCards();
 setupCards();
+setupCardTilt();
 setupObservers();
 setupHeroSpotlight();
 
