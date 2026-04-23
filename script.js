@@ -678,11 +678,11 @@ const resumeDataByLang = {
       {
         kicker: "Contact",
         title: "GitHub",
-        meta: "github.com/Kyrie5e/Self_Introduce",
+        meta: "github.com/Kyrie5e",
         note: "Open the GitHub repository",
         action: {
           type: "link",
-          value: "https://github.com/Kyrie5e/Self_Introduce",
+          value: "https://github.com/Kyrie5e",
           successText: "Opening GitHub"
         }
       }
