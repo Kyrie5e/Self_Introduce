@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>个人介绍 | Narrative Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Playfair+Display:wght@600;700;800&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="page-aura" aria-hidden="true"></div>
+
+  <header class="site-nav">
+    <nav aria-label="页面导航">
+      <a href="#about" class="nav-link is-active">关于</a>
+      <a href="#skills" class="nav-link">技能</a>
+      <a href="#projects" class="nav-link">项目</a>
+      <a href="#internships" class="nav-link">实习</a>
+      <a href="#campus" class="nav-link">校园</a>
+      <a href="#certificates" class="nav-link">证书</a>
+      <a href="#contact" class="nav-link">联系方式</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about" class="hero section-observe">
+      <div class="hero-shell">
+        <article class="hero-layer hero-layer--base">
+          <div class="hero-center hero-tilt">
+            <h1>Hello, I&apos;m <span>Kyrie</span></h1>
+            <p class="hero-roleline">AI大模型应用开发/23岁/集美大学/厦门</p>
+          </div>
+        </article>
+
+        <article class="hero-layer hero-layer--reveal" aria-hidden="true">
+          <div class="hero-center hero-tilt">
+            <h1>你好，我是<span>林晓军</span></h1>
+            <p class="hero-roleline">AI大模型应用开发/23岁/集美大学/厦门</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="hero-cursor" aria-hidden="true"></div>
+      <a class="scroll-prompt" href="#skills">向下浏览履历模块</a>
+    </section>
+
+    <section class="content-section about-overview section-observe">
+      <div class="section-heading section-heading--compact">
+        <p class="section-index">01B / About</p>
+        <h2>关于</h2>
+        <p>首屏聚焦感受，下一屏再用卡片继续展开个人概况、教育背景和求职目标。</p>
+      </div>
+      <div class="card-grid" data-section="about"></div>
+    </section>
+
+    <section id="skills" class="content-section section-observe">
+      <div class="section-heading">
+        <p class="section-index">02 / Skills</p>
+        <h2>技能</h2>
+        <p>每张卡片只展示关键信息，点击后展开更完整的能力说明。</p>
+      </div>
+      <div class="card-grid" data-section="skills"></div>
+    </section>
+
+    <section id="projects" class="content-section section-observe">
+      <div class="section-heading">
+        <p class="section-index">03 / Projects</p>
+        <h2>项目</h2>
+        <p>挑选了最能体现方法论、执行力与结果产出的项目经历。</p>
+      </div>
+      <div class="card-grid" data-section="projects"></div>
+    </section>
+
+    <section id="internships" class="content-section section-observe">
+      <div class="section-heading">
+        <p class="section-index">04 / Internships</p>
+        <h2>实习</h2>
+        <p>重点展示在企业环境中的协作方式、职责边界与落地成果。</p>
+      </div>
+      <div class="card-grid" data-section="internships"></div>
+    </section>
+
+    <section id="campus" class="content-section section-observe">
+      <div class="section-heading">
+        <p class="section-index">05 / Campus</p>
+        <h2>校园</h2>
+        <p>校园经历以角色、时间与结果为线索，便于快速理解投入方向。</p>
+      </div>
+      <div class="card-grid" data-section="campus"></div>
+    </section>
+
+    <section id="certificates" class="content-section section-observe">
+      <div class="section-heading">
+        <p class="section-index">06 / Certificates</p>
+        <h2>证书</h2>
+        <p>保留简洁概览，详情在弹窗中查看。</p>
+      </div>
+      <div class="card-grid" data-section="certificates"></div>
+    </section>
+
+    <section id="contact" class="content-section section-observe">
+      <div class="section-heading">
+        <p class="section-index">07 / Contact</p>
+        <h2>联系方式</h2>
+        <p>支持通过邮箱、电话或作品集渠道进一步沟通。</p>
+      </div>
+      <div class="card-grid" data-section="contact"></div>
+    </section>
+  </main>
+
+  <dialog id="detail-modal" class="detail-modal">
+    <div class="modal-close-wrap">
+      <button id="modal-close-button" type="button" class="modal-close" aria-label="关闭详情">关闭</button>
+    </div>
+    <div class="modal-copy">
+      <p class="modal-kicker" id="modal-kicker"></p>
+      <h3 id="modal-title"></h3>
+      <p class="modal-meta" id="modal-meta"></p>
+      <p class="modal-description" id="modal-description"></p>
+      <ul class="modal-details" id="modal-details"></ul>
+    </div>
+  </dialog>
+
+  <script src="./script.js"></script>
+</body>
+</html>
