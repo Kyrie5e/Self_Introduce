@@ -277,7 +277,7 @@ const resumeDataByLang = {
       {
         kicker: "Internship",
         title: "产品开发",
-        meta: "厦门亿特科技有限公司 / 2025.06 - 2025.09",
+        meta: "2025.06 - 2025.09",
         note: "负责通知系统、案卷管理、火灾调查表单等核心模块前后端开发",
         description: "在实习中参与多个真实业务模块的交付，覆盖文档生成、OCR 识别、权限控制、登录与限流等关键能力。",
         details: [
@@ -289,7 +289,7 @@ const resumeDataByLang = {
       {
         kicker: "Internship",
         title: "制度助手",
-        meta: "厦门轻工集团工业互联有限公司 / 2026.02 - 至今",
+        meta: "2026.02 - 至今",
         note: "基于 RAGFlow 构建企业制度知识库问答系统，并接入 OA 门户",
         description: "在这段实习里，我负责制度文档解析、知识检索链路设计和问答能力接入，把企业内部制度问答真正落到了日常办公场景里。",
         details: [
@@ -301,7 +301,7 @@ const resumeDataByLang = {
       {
         kicker: "Internship",
         title: "智能问数",
-        meta: "厦门轻工集团工业互联有限公司 / 2026.02 - 至今",
+        meta: "2026.02 - 至今",
         note: "基于 Vanna 搭建自然语言转 SQL 的企业问数能力",
         description: "我主要围绕业务人员自然语言查数的需求，参与 Text-to-SQL、查询安全审计和结果展示链路的实现，降低业务侧的数据使用门槛。",
         details: [
@@ -554,7 +554,7 @@ const resumeDataByLang = {
       {
         kicker: "Internship",
         title: "Product Development",
-        meta: "Xiamen Yite Technology Co., Ltd. / Jun 2025 - Sep 2025",
+        meta: "Jun 2025 - Sep 2025",
         note: "Worked on the frontend and backend of notification systems, archive management, and fire investigation forms",
         description: "During this internship, I participated in delivering several real business modules, covering document generation, OCR, permission control, login workflows, and rate limiting.",
         details: [
@@ -566,7 +566,7 @@ const resumeDataByLang = {
       {
         kicker: "Internship",
         title: "Policy Assistant",
-        meta: "Xiamen Light Industry Group Industrial Internet Co., Ltd. / Feb 2026 - Present",
+        meta: "Feb 2026 - Present",
         note: "Built an enterprise policy knowledge Q&A system with RAGFlow and integrated it into the OA portal",
         description: "In this internship, I worked on policy document parsing, retrieval workflow design, and Q&A integration, turning enterprise policy search into a real daily office capability.",
         details: [
@@ -578,7 +578,7 @@ const resumeDataByLang = {
       {
         kicker: "Internship",
         title: "Smart Data Query",
-        meta: "Xiamen Light Industry Group Industrial Internet Co., Ltd. / Feb 2026 - Present",
+        meta: "Feb 2026 - Present",
         note: "Built a natural-language-to-SQL data query capability with Vanna",
         description: "I focused on helping business users query data in natural language by working on Text-to-SQL generation, query safety checks, and result presentation workflows.",
         details: [
