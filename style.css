@@ -321,6 +321,12 @@ main {
   gap: 24px;
 }
 
+.card-grid[data-section="contact"] {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: min(1040px, 100%);
+  gap: 18px;
+}
+
 .resume-card {
   min-height: 220px;
   padding: 28px;
@@ -353,6 +359,50 @@ main {
   border-color: rgba(37, 99, 235, 0.34);
   box-shadow: 0 22px 46px rgba(37, 99, 235, 0.12);
   outline: none;
+}
+
+.resume-card--contact {
+  position: relative;
+  min-height: 172px;
+  padding: 22px 22px 24px;
+  gap: 14px;
+  overflow: hidden;
+}
+
+.resume-card--contact::after {
+  content: attr(data-action-label);
+  position: absolute;
+  right: 22px;
+  bottom: 20px;
+  font-family: "JetBrains Mono", "Courier New", monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(37, 99, 235, 0.58);
+  transition: transform 260ms ease, color 260ms ease;
+}
+
+.resume-card--contact h3 {
+  margin: 12px 0 8px;
+  font-size: 1.45rem;
+  line-height: 1.2;
+}
+
+.resume-card--contact .card-chip,
+.resume-card--contact .card-meta {
+  font-size: 0.74rem;
+}
+
+.resume-card--contact .card-note {
+  line-height: 1.6;
+  font-size: 0.94rem;
+  padding-right: 44px;
+}
+
+.resume-card--contact:hover::after,
+.resume-card--contact:focus-visible::after {
+  transform: translateX(-6px);
+  color: rgba(37, 99, 235, 0.9);
 }
 
 .card-top {
@@ -484,9 +534,41 @@ main {
   color: var(--color-accent);
 }
 
+.action-feedback {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  z-index: 30;
+  min-width: 168px;
+  padding: 12px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 999px;
+  color: #fbfaf6;
+  font-family: "JetBrains Mono", "Courier New", monospace;
+  font-size: 0.84rem;
+  letter-spacing: 0.08em;
+  text-align: center;
+  background: rgba(9, 9, 11, 0.8);
+  box-shadow: 0 18px 40px rgba(9, 9, 11, 0.24);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 18px);
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.action-feedback.is-visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
 @media (max-width: 1024px) {
   .card-grid {
     grid-template-columns: 1fr;
+  }
+
+  .card-grid[data-section="contact"] {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
   }
 }
 
@@ -513,8 +595,23 @@ main {
     padding: 24px;
   }
 
+  .card-grid[data-section="contact"] {
+    grid-template-columns: 1fr;
+    width: min(520px, 100%);
+  }
+
+  .resume-card--contact {
+    min-height: 164px;
+    padding: 20px 20px 22px;
+  }
+
   .detail-modal {
     border-radius: 22px;
+  }
+
+  .resume-card--contact::after {
+    right: 18px;
+    bottom: 16px;
   }
 }
 

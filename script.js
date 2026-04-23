@@ -90,18 +90,6 @@ const resumeData = {
   projects: [
     {
       kicker: "Project",
-      title: "企业 AI 智能制度问答助手",
-      meta: "2026.02 - 至今 / 厦门轻工集团工业互联有限公司",
-      note: "基于 RAGFlow 构建企业制度知识库问答系统，并嵌入 OA 门户",
-      description: "针对公司内部制度文档格式复杂、传统检索准确率低的问题，构建高精度知识库问答系统，实现复杂文档解析、向量存储与智能问答全链路能力。",
-      details: [
-        "基于 RAGFlow DeepDoc 优化复杂制度文档解析，提升长表格、多级标题等结构化识别能力。",
-        "设计并落地多路召回 + 重排序检索链路，提升制度类问答的召回质量与答案相关性。",
-        "知识问答能力以侧边栏形式接入 OA 门户，相较传统检索方案召回准确率提升约 30%。"
-      ]
-    },
-    {
-      kicker: "Project",
       title: "电商智能客服智能体",
       meta: "2026.01 - 2026.03",
       note: "面向扫地机器人客服场景的 RAG 智能体系统",
@@ -110,18 +98,6 @@ const resumeData = {
         "基于 LangChain / LangGraph 实现具备 ReAct 思维链的业务 Agent。",
         "基于 ChromaDB + Embedding 构建领域知识库，完成文档清洗、切分、向量化与答案生成闭环。",
         "设计多工具协同调用链路，打通知识检索、用户标识获取、时间识别、外部记录查询等能力。"
-      ]
-    },
-    {
-      kicker: "Project",
-      title: "基于 Vanna 的企业级智能问数助手",
-      meta: "2026.02 - 至今 / 厦门轻工集团工业互联有限公司",
-      note: "自然语言转 SQL 并输出可视化图表的企业问数系统",
-      description: "为解决业务人员查询数据门槛高、依赖开发写 SQL 的问题，开发基于 LLM 的智能问数系统，实现自然语言问数、自主查询和可视化结果展示。",
-      details: [
-        "基于 Vanna 的 RAG 机制导入数据库 DDL、元数据定义与 200+ 核心业务 SQL 样本，增强语义理解。",
-        "围绕合同管理、资产公司等场景持续优化 Text-to-SQL 提示词与知识样本，提升复杂查询生成效果。",
-        "在 Java 后端集成 Druid SQL 解析器，对模型生成 SQL 二次审计，并注入多租户隔离条件保障安全。"
       ]
     },
     {
@@ -176,14 +152,26 @@ const resumeData = {
     },
     {
       kicker: "Internship",
-      title: "Agent 开发",
+      title: "制度助手",
       meta: "厦门轻工集团工业互联有限公司 / 2026.02 - 至今",
-      note: "参与企业制度问答与智能问数等 AI 应用项目开发",
-      description: "工作重点聚焦企业内部知识问答、智能问数与大模型业务落地，兼顾 RAG、后端集成和系统安全控制。",
+      note: "基于 RAGFlow 构建企业制度知识库问答系统，并接入 OA 门户",
+      description: "在这段实习里，我负责制度文档解析、知识检索链路设计和问答能力接入，把企业内部制度问答真正落到了日常办公场景里。",
       details: [
-        "负责企业 AI 智能制度问答助手与企业级智能问数助手等项目的设计与实现。",
-        "围绕复杂文档解析、知识召回、Text-to-SQL 和查询安全审计开展工程落地。",
-        "推动 AI 能力直接接入企业 OA 门户和真实业务系统场景。"
+        "基于 RAGFlow DeepDoc 优化复杂制度文档解析，提升长表格、多级标题等结构化识别能力。",
+        "设计并落地多路召回和重排序检索链路，提升制度类问答的召回质量与答案相关性。",
+        "将知识问答能力以侧边栏形式接入 OA 门户，相较传统检索方案召回准确率提升约 30%。"
+      ]
+    },
+    {
+      kicker: "Internship",
+      title: "智能问数",
+      meta: "厦门轻工集团工业互联有限公司 / 2026.02 - 至今",
+      note: "基于 Vanna 搭建自然语言转 SQL 的企业问数能力",
+      description: "我主要围绕业务人员自然语言查数的需求，参与 Text-to-SQL、查询安全审计和结果展示链路的实现，降低业务侧的数据使用门槛。",
+      details: [
+        "基于 Vanna 的 RAG 机制导入数据库 DDL、元数据定义与 200+ 核心业务 SQL 样本，增强语义理解。",
+        "围绕合同管理、资产公司等场景持续优化 Text-to-SQL 提示词与知识样本，提升复杂查询生成效果。",
+        "在 Java 后端集成 Druid SQL 解析器，对模型生成 SQL 二次审计，并注入多租户隔离条件保障安全。"
       ]
     }
   ],
@@ -256,37 +244,52 @@ const resumeData = {
       kicker: "Contact",
       title: "邮箱联系",
       meta: "1747475576@qq.com",
-      note: "用于岗位沟通、材料发送与正式联系",
+      note: "点击复制邮箱地址",
       description: "邮箱为 1747475576@qq.com，可用于发送简历、补充项目资料和接收面试通知。",
       details: [
         "可用于岗位投递、招聘沟通和正式材料往来。",
         "适合发送项目说明、作品链接和补充说明材料。",
         "作为主要联络方式，便于统一接收书面通知。"
-      ]
+      ],
+      action: {
+        type: "copy",
+        value: "1747475576@qq.com",
+        successText: "邮箱已复制"
+      }
     },
     {
       kicker: "Contact",
-      title: "电话联系",
-      meta: "13459162653",
-      note: "用于面试确认、时间协调与即时沟通",
-      description: "电话为 13459162653，适合在面试安排、沟通确认和紧急联系场景中使用。",
+      title: "微信联系",
+      meta: "lxj2003c",
+      note: "点击复制微信账号",
+      description: "微信账号为 lxj2003c，平时也可以通过微信和我联系。",
       details: [
-        "可用于快速确认面试时间、线上会议和沟通安排。",
-        "在需要即时反馈的场景中，电话联系效率更高。",
-        "可以和邮箱配合使用，形成完整的沟通渠道。"
-      ]
+        "账号为 lxj2003c。",
+        "适合日常沟通、信息补充和后续联系。",
+        "如果需要进一步交流项目和求职信息，也可以直接加我微信。"
+      ],
+      action: {
+        type: "copy",
+        value: "lxj2003c",
+        successText: "微信账号已复制"
+      }
     },
     {
       kicker: "Contact",
       title: "GitHub",
       meta: "github.com/Kyrie5e/Self_Introduce",
-      note: "展示页面项目、代码实现与更新记录",
-      description: "GitHub 仓库中可以查看当前个人介绍页项目，并进一步了解代码组织、交互实现和更新记录。",
+      note: "点击跳转 GitHub 仓库",
+      description: "这个仓库里放的是我现在这套个人介绍页项目，能看到页面代码、交互实现和后续更新。",
       details: [
-        "仓库地址为 https://github.com/Kyrie5e/Self_Introduce 。",
-        "可直接查看源码、提交记录和页面持续更新内容。",
-        "适合作为简历外链和面试过程中补充展示项目实现细节的入口。"
-      ]
+        "仓库地址为 https://github.com/Kyrie5e/Self_Introduce",
+        "可以直接查看源码和提交记录。",
+        "里面也能看到这个页面具体是怎么实现的。"
+      ],
+      action: {
+        type: "link",
+        value: "https://github.com/Kyrie5e/Self_Introduce",
+        successText: "正在打开 GitHub"
+      }
     }
   ]
 };
@@ -316,6 +319,17 @@ const hero = document.querySelector(".hero");
 const heroCursor = document.querySelector(".hero-cursor");
 const reduceMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 let modalCloseTimer;
+let feedbackTimer;
+
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, (char) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    "\"": "&quot;",
+    "'": "&#39;"
+  }[char]));
+}
 
 function renderCards() {
   grids.forEach((grid) => {
@@ -324,11 +338,14 @@ function renderCards() {
 
     grid.innerHTML = items.map((item, index) => `
       <button
-        class="resume-card"
+        class="resume-card${key === "contact" ? " resume-card--contact" : ""}"
         type="button"
         data-section="${key}"
         data-index="${index}"
-        aria-label="查看 ${item.title} 的详细内容"
+        ${key === "contact" ? `data-action-label="${item.action?.type === "link" ? "跳转" : "复制"}"` : ""}
+        aria-label="${key === "contact"
+          ? escapeHtml(item.note || item.title)
+          : `查看 ${escapeHtml(item.title)} 的详细内容`}"
       >
         <div>
           <div class="card-top">
@@ -341,6 +358,64 @@ function renderCards() {
       </button>
     `).join("");
   });
+}
+
+async function copyText(value) {
+  if (navigator.clipboard?.writeText) {
+    await navigator.clipboard.writeText(value);
+    return;
+  }
+
+  const input = document.createElement("input");
+  input.value = value;
+  input.setAttribute("readonly", "readonly");
+  input.style.position = "absolute";
+  input.style.left = "-9999px";
+  document.body.appendChild(input);
+  input.select();
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}
+
+function showFeedback(message) {
+  const toast = document.querySelector(".action-feedback");
+  if (!toast) {
+    return;
+  }
+
+  window.clearTimeout(feedbackTimer);
+  toast.textContent = message;
+  toast.classList.add("is-visible");
+
+  feedbackTimer = window.setTimeout(() => {
+    toast.classList.remove("is-visible");
+  }, 1800);
+}
+
+async function handleCardAction(card) {
+  const sectionKey = card.dataset.section;
+  const index = Number(card.dataset.index);
+  const item = resumeData[sectionKey]?.[index];
+
+  if (!item?.action) {
+    openModal(sectionKey, index);
+    return;
+  }
+
+  if (item.action.type === "copy") {
+    try {
+      await copyText(item.action.value);
+      showFeedback(item.action.successText);
+    } catch (error) {
+      showFeedback("复制失败，请手动复制");
+    }
+    return;
+  }
+
+  if (item.action.type === "link") {
+    window.open(item.action.value, "_blank", "noopener,noreferrer");
+    showFeedback(item.action.successText);
+  }
 }
 
 function openModal(sectionKey, index) {
@@ -394,10 +469,12 @@ function closeModal() {
 }
 
 function setupCards() {
-  document.addEventListener("click", (event) => {
+  document.body.insertAdjacentHTML("beforeend", '<div class="action-feedback" aria-live="polite"></div>');
+
+  document.addEventListener("click", async (event) => {
     const card = event.target.closest(".resume-card");
     if (card) {
-      openModal(card.dataset.section, Number(card.dataset.index));
+      await handleCardAction(card);
       return;
     }
 
