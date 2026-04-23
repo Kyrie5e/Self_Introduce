@@ -58,15 +58,6 @@ const pageCopy = {
         intro: "如果你想进一步了解我，可以直接通过邮箱、微信或者 GitHub 联系我。"
       }
     },
-    sectionLookup: {
-      about: "关于",
-      skills: "技能",
-      projects: "项目",
-      internships: "实习",
-      campus: "校园",
-      certificates: "证书",
-      contact: "联系方式"
-    },
     actionLabels: {
       copy: "复制",
       link: "跳转"
@@ -131,15 +122,6 @@ const pageCopy = {
         title: "Contact",
         intro: "If you want to know more about me, you can reach me by email, WeChat, or GitHub."
       }
-    },
-    sectionLookup: {
-      about: "About",
-      skills: "Skills",
-      projects: "Projects",
-      internships: "Internships",
-      campus: "Campus",
-      certificates: "Certificates",
-      contact: "Contact"
     },
     actionLabels: {
       copy: "COPY",
@@ -399,12 +381,6 @@ const resumeDataByLang = {
         title: "邮箱联系",
         meta: "1747475576@qq.com",
         note: "点击复制邮箱地址",
-        description: "邮箱为 1747475576@qq.com，可用于发送简历、补充项目资料和接收面试通知。",
-        details: [
-          "可用于岗位投递、招聘沟通和正式材料往来。",
-          "适合发送项目说明、作品链接和补充说明材料。",
-          "作为主要联络方式，便于统一接收书面通知。"
-        ],
         action: {
           type: "copy",
           value: "1747475576@qq.com",
@@ -416,12 +392,6 @@ const resumeDataByLang = {
         title: "微信联系",
         meta: "lxj2003c",
         note: "点击复制微信账号",
-        description: "微信账号为 lxj2003c，平时也可以通过微信和我联系。",
-        details: [
-          "账号为 lxj2003c。",
-          "适合日常沟通、信息补充和后续联系。",
-          "如果需要进一步交流项目和求职信息，也可以直接加我微信。"
-        ],
         action: {
           type: "copy",
           value: "lxj2003c",
@@ -431,17 +401,11 @@ const resumeDataByLang = {
       {
         kicker: "Contact",
         title: "GitHub",
-        meta: "github.com/Kyrie5e/Self_Introduce",
+        meta: "github.com/Kyrie5e",
         note: "点击跳转 GitHub 仓库",
-        description: "这个仓库里放的是我现在这套个人介绍页项目，能看到页面代码、交互实现和后续更新。",
-        details: [
-          "仓库地址为 https://github.com/Kyrie5e/Self_Introduce",
-          "可以直接查看源码和提交记录。",
-          "里面也能看到这个页面具体是怎么实现的。"
-        ],
         action: {
           type: "link",
-          value: "https://github.com/Kyrie5e/Self_Introduce",
+          value: "https://github.com/Kyrie5e",
           successText: "正在打开 GitHub"
         }
       }
@@ -694,12 +658,6 @@ const resumeDataByLang = {
         title: "Email",
         meta: "1747475576@qq.com",
         note: "Click to copy my email address",
-        description: "My email is 1747475576@qq.com. You can use it to send resumes, project details, or interview information.",
-        details: [
-          "Suitable for formal communication, job applications, and written materials.",
-          "Useful when sending project explanations, links, or supporting files.",
-          "This is my main formal contact channel."
-        ],
         action: {
           type: "copy",
           value: "1747475576@qq.com",
@@ -711,12 +669,6 @@ const resumeDataByLang = {
         title: "WeChat",
         meta: "lxj2003c",
         note: "Click to copy my WeChat ID",
-        description: "My WeChat ID is lxj2003c. You can also reach me there for day-to-day communication.",
-        details: [
-          "WeChat ID: lxj2003c.",
-          "Suitable for daily communication, follow-up questions, and quick replies.",
-          "If you want to discuss projects or job opportunities further, you can add me on WeChat."
-        ],
         action: {
           type: "copy",
           value: "lxj2003c",
@@ -728,12 +680,6 @@ const resumeDataByLang = {
         title: "GitHub",
         meta: "github.com/Kyrie5e/Self_Introduce",
         note: "Open the GitHub repository",
-        description: "This repository contains the current personal introduction site, including the page code, interaction logic, and later updates.",
-        details: [
-          "Repository: https://github.com/Kyrie5e/Self_Introduce",
-          "You can review the source code and commit history directly.",
-          "It also shows how this site is implemented in practice."
-        ],
         action: {
           type: "link",
           value: "https://github.com/Kyrie5e/Self_Introduce",
@@ -768,6 +714,7 @@ const observedSections = document.querySelectorAll(".section-observe");
 const hero = document.querySelector(".hero");
 const heroCursor = document.querySelector(".hero-cursor");
 const reduceMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+let actionFeedback;
 
 let currentLanguage = "zh";
 let modalCloseTimer;
@@ -860,17 +807,16 @@ async function copyText(value) {
 }
 
 function showFeedback(message) {
-  const toast = document.querySelector(".action-feedback");
-  if (!toast) {
+  if (!actionFeedback) {
     return;
   }
 
   window.clearTimeout(feedbackTimer);
-  toast.textContent = message;
-  toast.classList.add("is-visible");
+  actionFeedback.textContent = message;
+  actionFeedback.classList.add("is-visible");
 
   feedbackTimer = window.setTimeout(() => {
-    toast.classList.remove("is-visible");
+    actionFeedback.classList.remove("is-visible");
   }, 1800);
 }
 
@@ -909,7 +855,7 @@ function openModal(sectionKey, index) {
   const copy = getCurrentCopy();
   window.clearTimeout(modalCloseTimer);
 
-  modalKicker.textContent = `${copy.sectionLookup[sectionKey]} / ${item.kicker}`;
+  modalKicker.textContent = `${copy.sections[sectionKey]?.title ?? ""} / ${item.kicker}`;
   modalTitle.textContent = item.title;
   modalMeta.textContent = item.meta;
   modalDescription.textContent = item.description;
@@ -953,6 +899,7 @@ function closeModal() {
 
 function setupCards() {
   document.body.insertAdjacentHTML("beforeend", '<div class="action-feedback" aria-live="polite"></div>');
+  actionFeedback = document.querySelector(".action-feedback");
 
   document.addEventListener("click", async (event) => {
     const card = event.target.closest(".resume-card");

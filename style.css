@@ -1,18 +1,13 @@
 :root {
   --color-primary: #18181b;
-  --color-secondary: #3f3f46;
   --color-accent: #2563eb;
-  --color-accent-soft: #dce8ff;
   --color-background: #fafaf7;
   --color-foreground: #09090b;
   --color-muted: #e8ecf0;
   --color-surface: rgba(255, 255, 255, 0.72);
   --color-border: rgba(24, 24, 27, 0.12);
-  --shadow-lg: 0 24px 80px rgba(15, 23, 42, 0.16);
   --shadow-md: 0 16px 40px rgba(15, 23, 42, 0.12);
-  --radius-xl: 32px;
   --radius-lg: 24px;
-  --radius-md: 18px;
   --container: min(1180px, calc(100vw - 40px));
   --pointer-x: 50%;
   --pointer-y: 50%;
