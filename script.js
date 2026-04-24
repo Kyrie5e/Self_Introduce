@@ -19,7 +19,7 @@ const pageCopy = {
       baseTitle: "Hello, I&apos;m <span>Kyrie</span>",
       revealTitle: "你好，我是<span>林晓军</span>",
       roleline: "AI大模型应用开发/23岁/集美大学/厦门",
-      scrollPrompt: "向下浏览履历模块"
+      scrollPrompt: "向下了解更多"
     },
     sections: {
       about: {
