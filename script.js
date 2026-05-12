@@ -390,11 +390,11 @@ const resumeDataByLang = {
       {
         kicker: "Contact",
         title: "微信联系",
-        meta: "lxj2003c",
+        meta: "lxj1111",
         note: "点击复制微信账号",
         action: {
           type: "copy",
-          value: "lxj2003c",
+          value: "lxj1111",
           successText: "微信账号已复制"
         }
       },
@@ -667,11 +667,11 @@ const resumeDataByLang = {
       {
         kicker: "Contact",
         title: "WeChat",
-        meta: "lxj2003c",
+        meta: "lxj1111",
         note: "Click to copy my WeChat ID",
         action: {
           type: "copy",
-          value: "lxj2003c",
+          value: "lxj1111",
           successText: "WeChat ID copied"
         }
       },
