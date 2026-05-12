@@ -3,7 +3,7 @@ const languageStorageKey = "resume-site-language";
 const pageCopy = {
   zh: {
     htmlLang: "zh-CN",
-    title: "林晓军 | AI大模型应用开发",
+    title: "魚魚 | AI大模型应用开发",
     navAria: "页面导航",
     toggleAria: "切换语言",
     nav: {
@@ -16,8 +16,8 @@ const pageCopy = {
       contact: "联系方式"
     },
     hero: {
-      baseTitle: "Hello, I&apos;m <span>Kyrie</span>",
-      revealTitle: "你好，我是<span>林晓军</span>",
+      baseTitle: "Hello, I&apos;m <span>YuYu</span>",
+      revealTitle: "你好，我是<span>魚魚</span>",
       roleline: "AI大模型应用开发/23岁/集美大学/厦门",
       scrollPrompt: "向下了解更多"
     },
@@ -139,7 +139,7 @@ const resumeDataByLang = {
       {
         kicker: "About",
         title: "个人概况",
-        meta: "林晓军 / AI大模型应用方向",
+        meta: "YuYu / AI大模型应用方向",
         note: "集美大学计算机科学与技术专业，主攻 AI 应用、Agent 与后端开发",
         description: "具备扎实的前后端开发基础，持续关注 AI 应用、Agent、RAG 知识库与企业智能化场景，能较快理解业务需求并推动方案落地。",
         details: [
